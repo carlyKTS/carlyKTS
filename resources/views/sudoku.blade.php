@@ -16,18 +16,18 @@
     </h1>
     <div class="text-zinc-800 text-center h-1/6" id="bttns">
           
-      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300" onclick="Clear()">Clear</button>
-      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300" onclick="ClearNote()">Clear Note</button>
-      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300" onclick="NewGame()">New Game</button>
-      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300" onclick="Hint()">Hint</button>
-      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300" onclick="Solve()">Solve</button>
+      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300">Clear</button>
+      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300">Clear Note</button>
+      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300">New Game</button>
+      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300">Hint</button>
+      <button type="button" class="w-1/6 h-1/6 m-1.5 bg-gray-200 hover:bg-gray-300">Solve</button>
 
     </div>
-    <div class="conatiner items-center">
+    <div class="container items-center">
       <div class="text-center mx-2.5 text-zinc-50 text-xl my-1" id="timer">
         OO:OO
       </div>
-      <div class="items-center text-zinc-50" id="board">
+      <div class="items-center" id="board">
         
       </div>
     </div>

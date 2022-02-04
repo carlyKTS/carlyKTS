@@ -15,6 +15,7 @@
     margin-top: auto;
     max-width: 100vw;
     max-height: 100vw;
+
     padding: 0px;
 }
 
@@ -43,8 +44,8 @@
     background-color: rgba(255, 255, 255, 0.877);
     text-align: center;
     padding: 0px;
-    color: black;
-    
+    color: rgb(27, 27, 48);
+    font-size:xx-large;
 }
 
 @media (hover:hover){
@@ -58,7 +59,7 @@
 
 .number-table{
     animation-name: number-table-keyframe;
-    animation-duration: 3ms;
+    animation-duration: 0.3s;
     position: absolute;
     min-width: calc(100vh * 1 / 6);
     min-height: calc(100vh * 1 / 6);
@@ -75,6 +76,7 @@
     border: 0.2px solid white;
     padding: 0%;
     cursor: pointer;
+    color: white;
 }
 
 @keyframes number-table-keyframe {
