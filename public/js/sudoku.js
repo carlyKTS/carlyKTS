@@ -9,8 +9,8 @@ function Board(unitOfBoard,boardContainer){
 Board.prototype={
 
     NewGame:function(){
-
-    }
+        
+    },
 
     boardConstruct:function() {
         var lineH = 1/this.sizeOfBoard*100
@@ -112,14 +112,13 @@ document.addEventListener('DOMContentLoaded', function(){
         unitOfBoard: 3,
         container: document.getElementById("board"),
     };
-    
-    var newBoard = new Board(config.unitOfBoard,config.container);
-    newBoard['boardConstruct']();
 
     document.querySelectorAll('button').forEach((bttn)=>{
-        var functionName = bttn.innerText.replace(' ','');
-        newBoard[functionName]();
         
+        var functionName = bttn.innerText.replace(' ','');
+        bttn.onclick = newBoard[functionName];
     });
-    
+        
+    var newBoard = new Board(config.unitOfBoard,config.container);
+    newBoard['boardConstruct']();
 })
