@@ -22,7 +22,7 @@ class Board{
                     var boardTd = document.createElement("td");
                     boardTd.setAttribute('class', 'boardTd r'+i+' c'+j);
                     boardTr.appendChild(boardTd);
-
+                    
                 }
             }
 
@@ -54,9 +54,8 @@ class Board{
                 curNumber++;
                 var numberTd = document.createElement('td');
                 numberTr.appendChild(numberTd);
-                var numberBttn = document.createElement('button');
-                numberBttn.textContent = curNumber;
-                numberTd.appendChild(numberBttn);
+                numberTd.innerText = curNumber;
+                
             };
         };
         var numberTableElement=boardContainer.appendChild(numberTable);
@@ -64,9 +63,6 @@ class Board{
     };
 }
 
-/*
- 
-*/
 
 //After the document is read, 
 //Create a blank board
@@ -78,21 +74,32 @@ document.addEventListener('DOMContentLoaded', function(){
     };
     
     var newBoard = new Board(config.unitOfBoard,config.container);
-    
-    config.container.addEventListener('mouseover',e=>{
-        if(e.target.classList.contains('boardTd')){
-            var numberTableElement=newBoard.numberTable(config.container);
-            
-            //var boardRow=e.target.classList;
+    var curTarget;
+    var numberTableElement;
 
-            config.container.addEventListener('mouseout',e2=>{
-                
-                if(!e2.target.isSameNode(numberTableElement)||!e2.target.isSameNode(e.target)) {
-                    numberTableElement.remove();
-                }
+    document.querySelectorAll('.boardTd').forEach((boardTd)=>{
+        
+        boardTd.addEventListener('mousedown',e=>{
+            
+            document.querySelectorAll('.number-table').forEach((nT)=>{
+                nT.remove();
+            });
+            
+            curTarget = e.target;
+            numberTableElement=newBoard.numberTable(config.container);
+            
+            numberTableElement.style.left=e.clientX +"px";
+            numberTableElement.style.top= e.clientY +"px";
+
+            numberTableElement.addEventListener('mousedown',e2=>{
+                var ans = e2.target.innerText;
+                curTarget.innerText=ans;
+                numberTableElement.remove();
             })
-        }
+            
+        })
     })
+    
 })
 
 
@@ -101,6 +108,8 @@ Board.prototype={
     BoardQuestion: function(){
 
     }
+
+
 }
 
 function Game(){
