@@ -48,8 +48,12 @@
     font-size:xx-large;
 }
 
+.boardTd.ans{
+    color: rgb(94,94,94);
+}
+
 @media (hover:hover){
-    .boardTd:hover{
+    .boardTd.ans:hover{
         background-color: rgba(240, 240, 240, 0.877);
     }
     .number-table td:hover{
